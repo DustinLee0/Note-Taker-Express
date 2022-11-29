@@ -28,20 +28,20 @@ app.post('/api/notes', (req, res) => {
         }
         const response = {
             message: 'Note Saved',
-            note: req.body
+            note: newNote
         }
-        // console.log(response, ' : ', newNote);
         
         readFile('./db/db.json', (err, data) => {
             if (err) throw err;
             const jsonData = JSON.parse(data);
             jsonData.push(newNote);
             
-            writeFile()
-
-
+            writeFile('./db/db.json', JSON.stringify(jsonData), (err) => {
+                if (err) throw err;
+                console.log('New notes saved to db.json file.');
+            });
         });
-
+        res.status(201).json(response);
 
     } else {
         res.status(400).send('Error in posting note. Please make sure you have a title and text to save.')
