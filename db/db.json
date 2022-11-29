@@ -1,3 +1,10 @@
 [
-
+    {
+        "title": "testText",
+        "text": "testProperty"
+    },
+    {
+        "title": "2",
+        "text": "123123"
+    }
 ]
