@@ -1,6 +1,6 @@
 const express = require('express');
-const { readFile, writeFile } = require('fs');
-const dbJson = require('./db/db.json');
+const { readFile, writeFile, write } = require('fs');
+const { v4: uuidv4 } = require('uuid')
 const path = require('path');
 
 const PORT = 3001;
@@ -17,14 +17,36 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     console.log(`${req.method} has been received`);
+    const { title, text } = req.body;
 
-    const data = req.body;
-    console.log(data);
+    if (title && text) {
+        const id = uuidv4();
+        const newNote = {
+            title: title,
+            text: text,
+            id: id
+        }
+        const response = {
+            message: 'Note Saved',
+            note: req.body
+        }
+        // console.log(response, ' : ', newNote);
+        
+        readFile('./db/db.json', (err, data) => {
+            if (err) throw err;
+            const jsonData = JSON.parse(data);
+            jsonData.push(newNote);
+            
+            writeFile()
 
-    readFile(dbJson, data, (err) => {
-        if (err) throw err;
-        console.log('The file has been saved!');
-    });
+
+        });
+
+
+    } else {
+        res.status(400).send('Error in posting note. Please make sure you have a title and text to save.')
+    }
+
 });
 
 //  html routes
