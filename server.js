@@ -3,7 +3,7 @@ const { readFile, writeFile } = require('fs');
 const { v4: uuidv4 } = require('uuid')
 const path = require('path');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.json());
