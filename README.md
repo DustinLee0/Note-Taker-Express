@@ -3,6 +3,8 @@
 
 A note taking application built with [express.js](https://expressjs.com/) to handle requests sent between the client  and the server. The app also utilizes the [uuid](https://www.npmjs.com/package/uuid) library to generate unique id's for each note saved. Application deployed on [Heroku](https://id.heroku.com/).
 
+The application URL is [https://note-taker-express0.herokuapp.com/](https://note-taker-express0.herokuapp.com/). 
+
 ## Installation
 Dependencies needed to run this application are [express.js](https://expressjs.com/) and [uuid.v4()](https://www.npmjs.com/package/uuid).
 
