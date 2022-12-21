@@ -18,4 +18,4 @@ The app directs the user to a landing page. Once the user starts the app, they w
 This application is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ### Notes
-Utilized [Insomnia](https://insomnia.rest/) to test endpoints while building app to ensure the right responses/requests were being sent. Using a RESTful API to store data is much more convenient and logical compared to storing data in local storage as that can only be accessed from the local machine it is saved on. 
+Utilized [Insomnia](https://insomnia.rest/) to test endpoints while building app to ensure the right responses/requests were being sent. Using a RESTful API to store data in a file is much more convenient, logical and robust compared to storing data in local storage as that can only be accessed from the local machine it is saved on. 
